@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message SpreadParmsS1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+	}
+}
+
+message SpreadParmsC1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double height = 8;
+		Math.Double cbh = 9;
+		Math.Double cfl = 10;
+	}
+}
+
+message SpreadParmsC6 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double height = 8;
+		Math.Double cbh = 9;
+		Math.Double cfl = 10;
+	}	
+}
+
+message SpreadParmsD1 {
+	int32 version = 1;
+
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double height = 8;
+		Math.Double cbh = 9;
+		Math.Double cfl = 10;
+	}
+}
+
+message SpreadParmsNz {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double height = 8;
+		Math.Double cbh = 9;
+		Math.Double cfl = 10;
+	}
+}
+
+message SpreadParmsO1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double curingDegree = 8;
+	}
+}
+
+message SpreadParmsO1ab {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double a = 2;
+		Math.Double b = 3;
+		Math.Double c = 4;
+		Math.Double q = 5;
+		Math.Double bui0 = 6;
+		Math.Double maxBe = 7;
+		Math.Double curingDegree = 8;
+		Math.Double o1AbStandingA = 9;
+		Math.Double o1AbStandingB = 10;
+		Math.Double o1AbStandingC = 11;
+	}
+}
+
+message SpreadParmsNon {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+	}
+}

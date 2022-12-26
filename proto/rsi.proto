@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message RsiC1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+	}
+}
+
+message RsiC6 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double fmeMultiplier = 2;
+		Math.Double fmePowAdder = 3;
+		Math.Double fmePowMultiplier = 4;
+		Math.Double fmeDivAdder = 5;
+		Math.Double fmeDivMultiplier = 6;
+		Math.Double fmePower = 7;
+		Math.Double rscMultiplier = 8;
+		Math.Double rscExpMultiplier = 9;
+		Math.Double fmeAvg = 10;
+	}
+}
+
+message RsiD2 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double threshold = 2;
+		Math.Double scale1 = 3;
+		Math.Double scale2 = 4;
+	}
+}
+
+message RsiM1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1 = 2;
+	}
+}
+
+message RsiM3 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double a = 3;
+		Math.Double b = 4;
+		Math.Double c = 5;
+		Math.Double p = 6;
+	}
+}
+
+message RsiM4 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double a = 3;
+		Math.Double b = 4;
+		Math.Double c = 5;
+		Math.Double d1A = 6;
+		Math.Double d1B = 7;
+		Math.Double d1C = 8;
+		Math.Double p = 9;
+	}
+}
+
+message RsiO1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double threshold = 2;
+		Math.Double f1 = 3;
+		Math.Double f2 = 4;
+		Math.Double f3 = 5;
+		Math.Double f4 = 6;
+	}
+}
+
+message RsiConstant {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double rsi = 2;
+	}
+}

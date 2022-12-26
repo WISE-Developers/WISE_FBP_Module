@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message SfcC1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double p1 = 3;
+		Math.Double p2 = 4;
+		Math.Double p3 = 5;
+		Math.Double p4 = 6;
+		Math.Double multiplier = 7;
+	}
+}
+
+message SfcC2 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double p1 = 3;
+		Math.Double p2 = 4;
+		Math.Double power = 5;
+		Math.Double multiplier = 6;
+	}
+}
+
+message SfcC7 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1F = 2;
+		Math.Double p2F = 3;
+		Math.Double p3F = 4;
+		Math.Double p1W = 5;
+		Math.Double p2W = 6;
+		Math.Double ffcMultiplier = 7;
+		Math.Double wfcMultiplier = 8;
+		Math.Double sfcMultiplier = 9;
+	}
+}
+
+message SfcD2 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double p1 = 3;
+		Math.Double p2 = 4;
+		Math.Double power = 5;
+		Math.Double multiplier = 6;
+		Math.Double threshold = 7;
+		Math.Double scale1 = 8;
+		Math.Double scale2 = 9;
+	}
+}
+
+message SfcM1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+	}
+}
+
+message SfcO1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double fuelLoad = 2;
+		string notes = 3 [deprecated = true];
+	}
+}
+
+message SfcS1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1F = 2;
+		Math.Double p2F = 3;
+		Math.Double p1W = 4;
+		Math.Double p2W = 5;
+		Math.Double ffcMultiplier = 6;
+		Math.Double wfcMultiplier = 7;
+		Math.Double sfcMultiplier = 8;
+		Math.Double ffcBuiMultiplier = 9;
+		Math.Double wfcBuiMultiplier = 10;
+	}
+}

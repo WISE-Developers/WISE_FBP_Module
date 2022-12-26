@@ -1,0 +1,274 @@
+syntax = "proto3";
+
+import "math.proto";
+import "google/protobuf/wrappers.proto";
+import "fuelNames.proto";
+import "rsi.proto";
+import "sfc.proto";
+import "cfb.proto";
+import "dbh.proto";
+import "lb.proto";
+import "isf.proto";
+import "tfc.proto";
+import "fmc.proto";
+import "accAlpha.proto";
+import "flame.proto";
+import "spreadParms.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message CcwfgmFuel {
+	int32 version = 1;
+
+	oneof msg {
+		FuelName readonly = 2;
+		FuelData data = 3;
+	}
+
+	message FuelData {
+		string name = 2;
+		FbpFuel fuel = 3;
+	    optional FuelName default = 1;			// not really optional but need to be able to suppress it in the old file format
+	}
+
+    optional uint32 color = 4;					// not really optional but need to be able to suppress it in the old file format
+    optional string comments = 5;
+    optional Flags flags = 6;
+
+    message Flags {
+        optional bool isNonStandard = 1;
+        optional bool isModified = 2;
+        optional bool isModifiedName = 3;
+        optional bool isUsed = 4;
+	}
+}
+
+message FmcAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		FmcCalc calc = 3;
+		FmcNoCalc noCalc = 4;
+	}
+}
+
+message TfcAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		TfcC1 c1 = 3;
+		TfcD2 d2 = 4;
+		TfcM1 m1 = 5;
+		TfcO1 o1 = 6;
+	}
+}
+
+message IsfAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		IsfC1 c1 = 3;
+		IsfM1 m1 = 4;
+		IsfM3M4 m3m4 = 5;
+		IsfO1 o1 = 6;
+	}
+}
+
+message AccAlphaAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		AccAlphaClosed alphaClosed = 3;
+		AccAlphaOpen alphaOpen = 4;
+	}
+}
+
+message LbAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		LbC1 c1 = 3;
+		LbO1 o1 = 4;
+	}
+}
+
+message DbhAttribute {
+	option deprecated = true;
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		DbhNone none = 3;
+		DbhHuangCommon huangCommon = 4;
+		Dbh1 one = 5;
+		Dbh2 two = 6;
+		Dbh3 three = 7;
+		Dbh4 four = 8;
+	}
+}
+
+message FlameLengthAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		FlameLengthAlexander82 alexander82 = 3;
+		FlameLengthAlexander82Tree alexander82Tree = 4;
+		FlameLengthTree tree = 5;
+		FlameLengthOther other = 6;
+	}
+}	
+
+message RsiAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+    oneof msg {
+		RsiC1 c1 = 3;
+        RsiC6 c6 = 4;
+		RsiD2 d2 = 5;
+		RsiM1 m1 = 6;
+		RsiM3 m3 = 7;
+		RsiM4 m4 = 8;
+		RsiO1 o1 = 9;
+		RsiConstant constant = 10;
+    }
+}
+
+message SfcAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+    oneof msg {
+		SfcC1 c1 = 3;
+		SfcC2 c2 = 4;
+		SfcC7 c7 = 5;
+		SfcD2 d2 = 6;
+		SfcM1 m1 = 7;
+		SfcO1 o1 = 8;
+		SfcS1 s1 = 9;
+    }
+}
+
+message CfbAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		CfbC1 c1 = 3;
+		CfbD2 d2 = 4;
+	}
+}
+
+message FuelAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+    oneof msg {
+		SpreadParmsAttribute spreadParms = 3;
+		FmcAttribute fmc = 4;
+		TfcAttribute tfc = 5;
+		IsfAttribute isf = 6;
+		AccAlphaAttribute accAlpha = 7;
+		LbAttribute lb = 8;
+		DbhAttribute dbh = 9 [deprecated = true];
+		FlameLengthAttribute flameLength = 10;
+		RsiAttribute rsi = 11;
+		SfcAttribute sfc = 12;
+		CfbAttribute cfb = 13;
+    }
+}
+
+message SpreadParmsMixed {
+	int32 version = 1;
+	
+	oneof msg {
+		DefaultParms default = 2;
+		Parms parms = 3;
+	}
+	
+	message DefaultParms {
+		FuelName default = 1;
+		Math.Double pc = 2;
+	}
+
+	message Parms {
+		int32 version = 1;
+		Math.Double q = 2;
+		Math.Double bui0 = 3;
+		Math.Double maxBe = 4;
+		Math.Double height = 5;
+		Math.Double cbh = 6;
+		Math.Double cfl = 7;
+		Math.Double pc = 8;
+		CcwfgmFuel C2 = 9;
+		CcwfgmFuel D1 = 10;
+	}
+}
+
+message SpreadParmsMixedDead {
+	int32 version = 1;
+	
+	oneof msg {
+		DefaultParms default = 2;
+		Parms parms = 3;
+	}
+	
+	message DefaultParms {
+		FuelName default = 1;
+		Math.Double pdf = 2;
+	}
+
+	message Parms {
+		int32 version = 1;
+		Math.Double q = 2;
+		Math.Double bui0 = 3;
+		Math.Double maxBe = 4;
+		Math.Double height = 5;
+		Math.Double cbh = 6;
+		Math.Double cfl = 7;
+		Math.Double pdf = 8;
+		CcwfgmFuel C2 = 9;
+		CcwfgmFuel D1 = 10;
+	}
+}
+
+
+message SpreadParmsAttribute {
+	int32 version = 1;
+	int64 commonField = 2 [deprecated = true];
+	oneof msg {
+		SpreadParmsS1 s1 = 3;
+		SpreadParmsC1 c1 = 4;
+		SpreadParmsC6 c6 = 5;
+		SpreadParmsD1 d1 = 6;
+		SpreadParmsNz nz = 7;
+		SpreadParmsO1 o1 = 8;
+		SpreadParmsO1ab o1ab = 9;
+		SpreadParmsMixed mixed = 10;
+		SpreadParmsMixedDead mixedDead = 11;
+		SpreadParmsNon non = 12;
+	}
+}
+
+
+message FbpFuel {
+	int32 version = 1;
+	string 					loadWarning = 2;
+	bool					fuelTypeModified = 3;
+	FuelName				defaultFuelType = 4;
+	SpreadParmsAttribute	spread = 5;
+	FmcAttribute			fmcCalculation = 6;
+	SfcAttribute			sfcCalculation = 7;
+	TfcAttribute			tfcCalculation = 8;
+	RsiAttribute			rsiCalculation = 9;
+	IsfAttribute			isfCalculation = 10;
+	AccAlphaAttribute		accAlphaCalculation = 11;
+	LbAttribute				lbCalculation = 12;
+	CfbAttribute			cfbCalculation = 13;
+	DbhAttribute			dbhCalculation = 14;
+	FlameLengthAttribute	flCalculation = 15;
+	SfcAttribute			sfcCalculationGreenup = 16;
+	TfcAttribute			tfcCalculationGreenup = 17;
+	RsiAttribute			rsiCalculationGreenup = 18;
+	IsfAttribute			isfCalculationGreenup = 19;
+	CfbAttribute			cfbCalculationGreenup = 20;
+}

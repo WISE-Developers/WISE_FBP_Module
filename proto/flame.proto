@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message FlameLengthAlexander82 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1 = 2;
+		Math.Double p2 = 3;
+	}
+}
+
+message FlameLengthAlexander82Tree {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}	
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1 = 2;
+		Math.Double p2 = 3;
+		Math.Double cfb = 4;
+		Math.Double th = 5;
+	}
+}
+
+message FlameLengthTree {
+	int32 version = 1;
+	
+	oneof msg{
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1 = 2;
+		Math.Double th = 3;
+		Math.Double cfb = 4;
+	}
+}
+
+message FlameLengthOther {
+	int32 version = 1;
+	
+	oneof msg{
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double p1 = 2;
+	}
+}

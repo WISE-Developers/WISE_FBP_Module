@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message IsfC1 {
+	int32 version = 1;
+	
+	oneof msg{
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+	}
+}
+
+message IsfM1 {
+	int32 version = 1;
+	
+	oneof msg{
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+	}
+}
+
+message IsfM3M4 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string notes = 2 [deprecated = true];
+		Math.Double a = 3;
+		Math.Double b = 4;
+		Math.Double c = 5;
+	}
+}
+
+message IsfO1 {
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double threshold = 2;
+		Math.Double f1 = 3;
+		Math.Double f2 = 4;
+		Math.Double f3 = 5;
+		Math.Double f4 = 6;
+	}
+}

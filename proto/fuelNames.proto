@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+enum FuelName {
+	unset = 0;
+	C1 = 1;
+	C2 = 2;
+	C3 = 3;
+	C4 = 4;
+	C5 = 5;
+	C6 = 6;
+	C7 = 7;
+	D1 = 11;
+	D2 = 12;
+	D1D2 = 13;
+	M1 = 21;
+	M2 = 22;
+	M1M2 = 23;
+	M3 = 24;
+	M4 = 25;
+	M3M4 = 26;
+	O1A = 31;
+	O1B = 32;
+	O1AB = 33;
+	S1 = 41;
+	S2 = 42;
+	S3 = 43;
+	Non = 51;
+	Nz2 = 62;
+	Nz15 = 75;
+	Nz30 = 90;
+	Nz31 = 91;
+	Nz32 = 92;
+	Nz33 = 93;
+	Nz40 = 100;
+	Nz41 = 101;
+	Nz43 = 103;
+	Nz44 = 104;
+	Nz45 = 105;
+	Nz46 = 106;
+	Nz47 = 107;
+	Nz50 = 110;
+	Nz51 = 111;
+	Nz52 = 112;
+	Nz53 = 113;
+	Nz54 = 114;
+	Nz55 = 115;
+	Nz56 = 116;
+	Nz57 = 117;
+	Nz58 = 118;
+	Nz60 = 120;
+	Nz61 = 121;
+	Nz62 = 122;
+	Nz63 = 123;
+	Nz64 = 124;
+	Nz65 = 125;
+	Nz66 = 126;
+	Nz67 = 127;
+	Nz68 = 128;
+	Nz69 = 129;
+	Nz70 = 130;
+	Nz71 = 131;
+}

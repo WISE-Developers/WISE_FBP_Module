@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+import "math.proto";
+import "fuelNames.proto";
+
+option java_package = "ca.wise.fuel.proto";
+option csharp_namespace = "WISE.FuelProto";
+option java_multiple_files = true;
+
+package WISE.FuelProto;
+
+message DbhNone {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		string speciesCode = 2;
+	}
+}
+
+message DbhHuangCommon {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double b1 = 2;
+		Math.Double b2 = 3;
+		Math.Double b3 = 4;
+		string speciesCode = 5;
+	}
+}
+
+message Dbh1 {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double b1 = 2;
+		Math.Double b2 = 3;
+		Math.Double b3 = 4;
+		string speciesCode = 5;
+	}
+}
+
+message Dbh2 {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double b1 = 2;
+		Math.Double b2 = 3;
+		Math.Double b3 = 4;
+		string speciesCode = 5;
+	}
+}
+
+message Dbh3 {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double b1 = 2;
+		Math.Double b2 = 3;
+		Math.Double b3 = 4;
+		string speciesCode = 5;
+	}
+}
+
+
+message Dbh4 {
+	option deprecated = true;
+	int32 version = 1;
+	
+	oneof msg {
+		FuelName default = 2;
+		Parms parms = 3;
+	}
+	
+	message Parms {
+		int32 version = 1;
+		Math.Double b1 = 2;
+		Math.Double b2 = 3;
+		Math.Double b3 = 4;
+		string speciesCode = 5;
+	}
+}
