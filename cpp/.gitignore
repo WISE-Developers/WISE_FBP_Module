@@ -1,0 +1,11 @@
+/FuelCom.tlb
+/FuelCom_p.c
+/Debug
+/x64
+/dlldata.c
+/FuelCom.idl.ts
+/FuelCom_i.c
+/*.bak
+/*.pb.h
+/*.pb.cc
+build
