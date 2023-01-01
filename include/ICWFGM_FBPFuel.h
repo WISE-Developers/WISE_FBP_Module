@@ -22,7 +22,7 @@
 
 
 // done this way to avoid some files that can't be compiled as Cxx17
-namespace CWFGM {
+namespace WISE {
 	namespace FuelProto {
 		enum FuelName : int;
 	}
