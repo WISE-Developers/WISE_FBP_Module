@@ -128,7 +128,6 @@ set_target_properties(fuel PROPERTIES
     PUBLIC_HEADER include/ICWFGM_FBPFuel.h
     PUBLIC_HEADER include/ICWFGM_Fuel.h
     PUBLIC_HEADER include/ISerializeProto.h
-    PUBLIC_HEADER include/ISerializeXMLStream.h
     PUBLIC_HEADER include/isf.h
     PUBLIC_HEADER include/isf.pb.h
     PUBLIC_HEADER include/lb.h
