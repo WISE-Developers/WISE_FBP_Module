@@ -303,7 +303,7 @@ public:
 	bool IsMixed() const;
 	bool IsMixedDead() const;
 	bool IsC6() const;
-	__inline bool IsModified() const			{ return m_fuelTypeModified ? true : false; }
+	bool IsModified() const			{ return m_fuelTypeModified ? true : false; }
 
 	void SetC2(boost::intrusive_ptr<ICWFGM_Fuel> &newVal);
 	void SetD1(boost::intrusive_ptr<ICWFGM_Fuel> &newVal);
