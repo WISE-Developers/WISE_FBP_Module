@@ -36,10 +36,10 @@ public:
 	virtual ~FuelAttribute()																			{ };
 
 	virtual HRESULT GetAttributeValue(std::uint16_t /*attributeKey*/, double* /*attribute*/ ) const		{ return E_UNEXPECTED; };
-	virtual HRESULT SetAttributeValue(std::uint16_t /*attributeKey*/, double /*attribute*/)				{ weak_assert(0); return E_UNEXPECTED; };
-	virtual std::uint16_t GetExternalDefinition() const													{ weak_assert(0); return (std::uint16_t)1; };
-	virtual bool Equals(const FuelAttribute * /*attribute*/)	const									{ weak_assert(0); return false; };
-	virtual FuelAttribute *Clone() const																{ weak_assert(0); return nullptr; };
+	virtual HRESULT SetAttributeValue(std::uint16_t /*attributeKey*/, double /*attribute*/)				{ weak_assert(false); return E_UNEXPECTED; };
+	virtual std::uint16_t GetExternalDefinition() const													{ weak_assert(false); return (std::uint16_t)1; };
+	virtual bool Equals(const FuelAttribute * /*attribute*/)	const									{ weak_assert(false); return false; };
+	virtual FuelAttribute *Clone() const																{ weak_assert(false); return nullptr; };
 
 	virtual FuelAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override = 0;
 };
@@ -137,25 +137,25 @@ public:
 
 class SpreadParmsAttribute : public FuelAttribute {
 public:
-	virtual double A(std::int16_t /*flag*/) const { weak_assert(0); return 0.0; };
-	virtual double B(std::int16_t /*flag*/) const { weak_assert(0); return 0.0; };
-	virtual double C(std::int16_t /*flag*/) const { weak_assert(0); return 0.0; };
-	virtual double Q() const { weak_assert(0); return 0.0; };
-	virtual double BUI0() const { weak_assert(0); return 0.0; };
-	virtual double MaxBE() const { weak_assert(0); return 0.0; };
-	virtual double Height(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
-	virtual double CBH(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
-	virtual double CFL(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
-	virtual double CuringDegree(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
-	virtual double PC(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
+	virtual double A(std::int16_t /*flag*/) const { weak_assert(false); return 0.0; };
+	virtual double B(std::int16_t /*flag*/) const { weak_assert(false); return 0.0; };
+	virtual double C(std::int16_t /*flag*/) const { weak_assert(false); return 0.0; };
+	virtual double Q() const { weak_assert(false); return 0.0; };
+	virtual double BUI0() const { weak_assert(false); return 0.0; };
+	virtual double MaxBE() const { weak_assert(false); return 0.0; };
+	virtual double Height(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
+	virtual double CBH(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
+	virtual double CFL(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
+	virtual double CuringDegree(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
+	virtual double PC(const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
 
-	virtual void C2(boost::intrusive_ptr<ICWFGM_Fuel> & /*c2*/) { weak_assert(0); }
-	virtual void D1(boost::intrusive_ptr<ICWFGM_Fuel> & /*d1*/) { weak_assert(0); }
+	virtual void C2(boost::intrusive_ptr<ICWFGM_Fuel> & /*c2*/) { weak_assert(false); }
+	virtual void D1(boost::intrusive_ptr<ICWFGM_Fuel> & /*d1*/) { weak_assert(false); }
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::SpreadParmsAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual SpreadParmsAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData* defaults) override;
-	virtual SpreadParmsAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual SpreadParmsAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -173,12 +173,12 @@ public:
 */
 class FMCAttribute : public FuelAttribute {
 public:
-	virtual double FMC(double /*lat*/, double /*lon*/, double /*elev*/, std::uint16_t /*day*/, const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; }
+	virtual double FMC(double /*lat*/, double /*lon*/, double /*elev*/, std::uint16_t /*day*/, const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; }
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::FmcAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual FMCAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual FMCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual FMCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const  noexcept override { return std::nullopt; }
 };
 
@@ -194,12 +194,12 @@ public:
 */
 class SFCAttribute : public FuelAttribute {
 public:
-	virtual double SFC(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* /*overrides*/, double /*FFMC*/, double /*BUI*/) const { weak_assert(0); return 0.0; };
+	virtual double SFC(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* /*overrides*/, double /*FFMC*/, double /*BUI*/) const { weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::SfcAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual SFCAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual SFCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual SFCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -216,12 +216,12 @@ public:
 */
 class TFCAttribute : public FuelAttribute {
 public:
-	virtual double TFC(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* /*overrides*/, double /*CFB*/, double /*SFC*/, double* /*CFC*/) const { weak_assert(0); return 0.0; };
+	virtual double TFC(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* /*overrides*/, double /*CFB*/, double /*SFC*/, double* /*CFC*/) const { weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::TfcAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual TFCAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual TFCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual TFCAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -239,12 +239,12 @@ public:
 */
 class CFBAttribute : public FuelAttribute {
 public:
-	virtual double CFB(double /*CBH*/, double /*FMC*/, double /*SFC*/, double /*ROS*/, double* /*rso*/, double* /*csi*/) const { weak_assert(0); return 0.0; };
+	virtual double CFB(double /*CBH*/, double /*FMC*/, double /*SFC*/, double /*ROS*/, double* /*rso*/, double* /*csi*/) const { weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::CfbAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual CFBAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual CFBAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual CFBAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -278,15 +278,15 @@ class RSIAttribute : public FuelAttribute {
 public:
 	virtual double RSI(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* overrides, double /*ISI*/, double /*FMC*/, double /*BUI*/, double /*FFMC*/, double /*BE*/,
 		double * /*rsi_c2*/, double * /*rsi_d1*/) const
-											{ weak_assert(0); return 0.0; };
+											{ weak_assert(false); return 0.0; };
 	virtual double ROS(double /*RSI*/, double /*CBH*/, double /*ISI*/, double /*FMC*/, double /*SFC*/, CFBAttribute* /*cfb*/) const
-											{ weak_assert(0); return 0.0; };
-	virtual double FOR_FROS(double /*RSS*/, double /*ROS*/, double /*CFB*/) const { weak_assert(0); return 0.0; };
+											{ weak_assert(false); return 0.0; };
+	virtual double FOR_FROS(double /*RSS*/, double /*ROS*/, double /*CFB*/) const { weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::RsiAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual RSIAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual RSIAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual RSIAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -305,12 +305,12 @@ public:
 class ISFAttribute : public FuelAttribute {
 public:
  	virtual double ISF(SpreadParmsAttribute * /*sa*/, std::int16_t /*flag*/, const CCWFGM_FuelOverrides* /*overrides*/, double /*RSF_C2*/, double /*RSF_D1*/, double /*SF*/, double /*ISZ*/) const
-											{ weak_assert(0); return 0.0; };
+											{ weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::IsfAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual ISFAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual ISFAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual ISFAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -328,7 +328,7 @@ public:
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::AccAlphaAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual AccAlphaAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual AccAlphaAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual AccAlphaAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 
@@ -346,26 +346,8 @@ public:
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::LbAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual LBAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual LBAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual LBAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
-};
-
-/*
-	Declaration for the DBHAttribute class which inherits the methods and variables from FuelAttribute.  Height -> DBH calculations are not part
-	of the FBP standard but is included here since it's the ideal location for this functionality.
-	
-	Method list:
-	DBH with a return type double that takes the following as parameters:
-		A height value of type double
-	SpeciesCode with a return type string
-	SpeciesCode with a return type void that takes the following as parameters:
-		A code value of type string
-*/
-class DBHAttribute : public FuelAttribute {
-public:
-	virtual double DBH(double /*height*/) const					{ weak_assert(0); return 0.0; };
-	virtual std::string SpeciesCode() const						{ weak_assert(0); return ""; };
-	virtual void SpeciesCode(const std::string & /*code*/)		{ weak_assert(0); };
 };
 
 /*
@@ -380,12 +362,12 @@ public:
 */
 class FlameLengthAttribute : public FuelAttribute {
 public:
-	virtual double FlameLength(double /*height*/, double /*CFB*/, double /*fi*/, const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(0); return 0.0; };
+	virtual double FlameLength(double /*height*/, double /*CFB*/, double /*fi*/, const CCWFGM_FuelOverrides* /*overrides*/) const { weak_assert(false); return 0.0; };
 
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override { return 1; }
 	virtual WISE::FuelProto::FlameLengthAttribute* serialize(const SerializeProtoOptions& options) override;
 	virtual FlameLengthAttribute *deserialize(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name, ISerializationData *defaults) override;
-	virtual FlameLengthAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); return nullptr; }
+	virtual FlameLengthAttribute *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); return nullptr; }
 	virtual std::optional<bool> isdirty() const noexcept override { return std::nullopt; }
 };
 

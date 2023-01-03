@@ -35,7 +35,6 @@ public abstract class FUELCOM_EQUATION {
 	public static final int CFB_GREENUP					= (CFB | GREENUP_MODIFIER);
 	public static final int ACCEL			= 18256;
 	public static final int LB				= 18257;
-	public static final int DBH			= 18258;
 	public static final int FLAMELENGTH	= 18259;
 	public static final int SPREADPARMS	= 18260;
 
@@ -77,12 +76,6 @@ public abstract class FUELCOM_EQUATION {
 
 	public static final int SELECTION_LB_C1	= 18420;
 	public static final int SELECTION_LB_O1	= 18421;
-
-	public static final int SELECTION_DBH_1	= 18430;
-	public static final int SELECTION_DBH_2	= 18431;
-	public static final int SELECTION_DBH_3	= 18432;
-	public static final int SELECTION_DBH_4	= 18433;
-	public static final int SELECTION_DBH_NONE	= 18434;
 
 	public static final int SELECTION_FLAMELENGTH_TREE				= 18450;
 	public static final int SELECTION_FLAMELENGTH_OTHER			= 18451;

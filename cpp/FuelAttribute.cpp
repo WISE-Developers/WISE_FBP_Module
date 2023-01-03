@@ -25,7 +25,6 @@
 #include "cfb.h"
 #include "isf.h"
 #include "lb.h"
-#include "dbh.h"
 #include "flame.h"
 #include "ccwfgmFuel.pb.h"
 #include "str_printf.h"
@@ -44,14 +43,14 @@ AccAlphaAttribute *AccAlphaAttribute::deserialize(const google::protobuf::Messag
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.AccAlphaAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.AccAlphaAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -86,7 +85,7 @@ AccAlphaAttribute *AccAlphaAttribute::deserialize(const google::protobuf::Messag
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -103,14 +102,14 @@ RSIAttribute *RSIAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.RsiAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("RSIAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.RsiAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("RSIAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -199,7 +198,7 @@ RSIAttribute *RSIAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!rsi)
-		weak_assert(0);
+		weak_assert(false);
 	return rsi;
 }
 
@@ -216,13 +215,13 @@ SpreadParmsAttribute *SpreadParmsAttribute::deserialize(const google::protobuf::
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParmsAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParmsAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -359,7 +358,7 @@ SpreadParmsAttribute *SpreadParmsAttribute::deserialize(const google::protobuf::
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -376,14 +375,14 @@ FMCAttribute *FMCAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FmcAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMCAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FmcAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMCAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -418,7 +417,7 @@ FMCAttribute *FMCAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -435,14 +434,14 @@ SFCAttribute *SFCAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFCAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFCAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -532,7 +531,7 @@ SFCAttribute *SFCAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -548,14 +547,14 @@ TFCAttribute *TFCAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFCAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFCAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -612,7 +611,7 @@ TFCAttribute *TFCAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -629,14 +628,14 @@ CFBAttribute *CFBAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.CfbAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("CFBAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.CfbAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("CFBAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -671,7 +670,7 @@ CFBAttribute *CFBAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -688,14 +687,14 @@ ISFAttribute *ISFAttribute::deserialize(const google::protobuf::Message& proto, 
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.IsfAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("ISFAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.IsfAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("ISFAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -752,7 +751,7 @@ ISFAttribute *ISFAttribute::deserialize(const google::protobuf::Message& proto, 
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -769,14 +768,14 @@ LBAttribute *LBAttribute::deserialize(const google::protobuf::Message& proto, st
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LBAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LBAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -811,7 +810,7 @@ LBAttribute *LBAttribute::deserialize(const google::protobuf::Message& proto, st
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }
 
@@ -828,14 +827,14 @@ FlameLengthAttribute *FlameLengthAttribute::deserialize(const google::protobuf::
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAttribute", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLengthAttribute: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msg->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAttribute", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLengthAttribute: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -892,6 +891,6 @@ FlameLengthAttribute *FlameLengthAttribute::deserialize(const google::protobuf::
 	}
 
 	if (!acc)
-		weak_assert(0);
+		weak_assert(false);
 	return acc;
 }

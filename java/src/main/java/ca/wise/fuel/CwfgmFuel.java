@@ -261,13 +261,6 @@ public abstract class CwfgmFuel implements Cloneable, ISerializeProto<CwfgmFuel>
 	 */
 	public abstract double flameLength(double height, double CFB, double FI);
 	
-	/**
-	 * Calculates DBH (diameter at breast height, measured at 1.3m above the ground).  Note that this routine is not part of the FBP standard.
-	 * @param height Tree height
-	 * @return	Returned Diameter at Breast Height (DBH)
-	 */
-	public abstract double dbh(double height);
-	
 	/**			
  	 * Reports whether the fuel type is C-1, C-2, C-3, C-4, C-5, C-6, or C-7. This fuel type information is retained after cloning a read-only template into a read/write fuel type. This information will become invalid once an equation in the read/write fuel has been replaced. 
 	 * @return result of the test

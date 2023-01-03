@@ -45,7 +45,7 @@ public:
 public:
 	virtual std::int32_t serialVersionUid(const SerializeProtoOptions& options) const noexcept override;
 	virtual google::protobuf::Message* serialize(const SerializeProtoOptions& options) override;
-	virtual CCWFGM_Fuel *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(0); throw std::logic_error("Missing deserialization"); }
+	virtual CCWFGM_Fuel *deserialize(const google::protobuf::Message& /*proto*/, std::shared_ptr<validation::validation_object> /*valid*/, const std::string& /*name*/) override { weak_assert(false); throw std::logic_error("Missing deserialization"); }
 	virtual std::optional<bool> isdirty() const noexcept override { return m_bRequiresSave; }
 
 	static CCWFGM_Fuel *deserializeFuel(const google::protobuf::Message& proto, std::shared_ptr<validation::validation_object> valid, const std::string& name);

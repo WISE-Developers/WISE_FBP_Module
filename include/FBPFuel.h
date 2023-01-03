@@ -187,8 +187,6 @@ using namespace HSS_Time;
 			A flag value of type int16_t
 			A ffmc_t value of type WTimeSpan
 			A raz value of type double
-		DBH with a return type of double that takes the following parameters:
-			A height value of type double
 		FlameLength with a return type of double that takes the following parameters:
 			A height value of type double
 			A CFB value of type double

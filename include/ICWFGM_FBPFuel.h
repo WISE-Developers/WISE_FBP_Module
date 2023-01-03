@@ -358,37 +358,6 @@ public:
 
 };
 
-/*
-	Declaration for the ICWFGM_DBHAttribute class
-
-	Method list:
-		No argument constructor
-		DBH with a return type HRESULT that takes the following parameters:
-			A height value of type double
-			A dbh value of type double
-*/
-class FUELCOM_API ICWFGM_DBHAttribute {
-public:
-	ICWFGM_DBHAttribute();
-	virtual ~ICWFGM_DBHAttribute() { }
-
-	virtual NO_THROW HRESULT DBH(double height, double *dbh) = 0;
-
-private:
-	mutable boost::atomic<long> __boost_ref_cnt;		// this variable and the below methods deal with the necessary implementations for the boost intrusive_ptr<> template
-														// to deal with automatic clean-up of this object when no other clients retain a reference to it any longer.  This is
-														// a way of dealing with automatic garbage collection in C++ that's a good migration from the Microsoft ATL/COM
-														// infrastructure that we're migrating away from.
-public:
-	friend inline void intrusive_ptr_add_ref(const ICWFGM_DBHAttribute *f) { f->__boost_ref_cnt.fetch_add(1, boost::memory_order_relaxed); };
-	friend inline void intrusive_ptr_release(const ICWFGM_DBHAttribute *f) {
-		if (f->__boost_ref_cnt.fetch_sub(1, boost::memory_order_release) == 1) {
-			boost::atomic_thread_fence(boost::memory_order_acquire);
-			delete f;
-		}
-	};
-};
-
 
 /** Interface CWFGM FBPFuel
 

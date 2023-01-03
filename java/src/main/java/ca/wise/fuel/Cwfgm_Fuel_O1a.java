@@ -46,7 +46,6 @@ public class Cwfgm_Fuel_O1a extends Cwfgm_Fuel_Readonly {
 		
 		m_fuel.m_CFBCalculation.setAttributeValue((short)FUELCOM_ATTRIBUTE.CFB_O1A_DEFAULTS, 0.0);
 		
-		m_fuel.m_DBHCalculation = new DBH_None();
 		m_fuel.m_FLCalculation = new FlameLength_Alexander82();
 	}
 

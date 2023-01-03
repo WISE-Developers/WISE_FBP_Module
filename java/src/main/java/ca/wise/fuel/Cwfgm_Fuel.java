@@ -60,21 +60,6 @@ public class Cwfgm_Fuel extends CwfgmFBPFuel {
 	}
 
 	@Override
-	public void setSpeciesCode(String name) {
-		if (m_fuel.m_DBHCalculation == null)
-			throw new IllegalStateException("The object is in an unexpected state.");
-		m_fuel.m_DBHCalculation.setSpeciesCode(name);
-		m_bRequiresSave = true;
-	}
-
-	@Override
-	public String getSpeciesCode() {
-		if (m_fuel.m_DBHCalculation == null)
-			throw new IllegalStateException("The object is in an unexpected state.");
-		return m_fuel.m_DBHCalculation.getSpeciesCode();
-	}
-	
-	@Override
 	public double fmc(double latitude, double longitude, double elev, int day) {
 		return m_fuel.fmc(latitude, longitude, elev, day);
 	}
@@ -147,11 +132,6 @@ public class Cwfgm_Fuel extends CwfgmFBPFuel {
 	@Override
 	public double flameLength(double height, double CFB, double FI) {
 		return m_fuel.flameLength(height, CFB, FI);
-	}
-
-	@Override
-	public double dbh(double height) {
-		return m_fuel.dbh(height);
 	}
 
 	@Override
@@ -336,15 +316,6 @@ public class Cwfgm_Fuel extends CwfgmFBPFuel {
 	@Override
 	public void setCustomEquation_LB(CwfgmLBAttribute newVal) {
 		m_fuel.m_LBCustom = newVal;
-	}
-
-	public CwfgmDBHAttribute getCustomEquation_DBH() {
-		return m_fuel.m_DBHCustom;
-	}
-	
-	@Override
-	public void setCustomEquation_DBH(CwfgmDBHAttribute newVal) {
-		m_fuel.m_DBHCustom = newVal;
 	}
 
 	public Object queryInterface(long riid)

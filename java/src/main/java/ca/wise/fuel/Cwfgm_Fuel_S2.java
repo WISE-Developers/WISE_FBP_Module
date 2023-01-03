@@ -44,7 +44,6 @@ public class Cwfgm_Fuel_S2 extends Cwfgm_Fuel_Readonly {
 		m_fuel.m_LBCalculation = new LB_C1();
 		m_fuel.m_CFBCalculation_Greenup = m_fuel.m_CFBCalculation = new CFB_C1();
 		m_fuel.m_CFBCalculation.setAttributeValue((short)FUELCOM_ATTRIBUTE.CFB_S2_DEFAULTS, 0.0);
-		m_fuel.m_DBHCalculation = new DBH_None();
 		m_fuel.m_FLCalculation = new FlameLength_Alexander82();
 	}
 

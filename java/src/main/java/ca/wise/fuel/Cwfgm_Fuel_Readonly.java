@@ -101,9 +101,4 @@ public class Cwfgm_Fuel_Readonly extends Cwfgm_Fuel {
 	public void setCustomEquation_LB(CwfgmLBAttribute newVal) {
 		throw new IllegalStateException("The object is in an unexpected state.");
 	}
-	
-	@Override
-	public void setCustomEquation_DBH(CwfgmDBHAttribute newVal) {
-		throw new IllegalStateException("The object is in an unexpected state.");
-	}	
 }

@@ -25,7 +25,6 @@
 #include "lb.h"
 #include "cfb.h"
 #include "AccAlpha.h"
-#include "dbh.h"
 #include "flame.h"
 #include "SpreadParms.h"
 #include "FBPFuel.h"
@@ -321,14 +320,14 @@ FBPFuel *FBPFuel::deserialize(const google::protobuf::Message& proto, std::share
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FbpFuel", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FBPFuel: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FbpFuel", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		m_loadWarning += "FBPFuel: Version is invalid";
 		throw ISerializeProto::DeserializeError("FBPFuel: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
@@ -1408,7 +1407,7 @@ HRESULT FBPFuel::GetEquation(std::uint16_t equationKey, std::uint16_t *equation)
 		default:				*equation = 0;
 			
     #ifdef DEBUG
-							weak_assert(0);
+							weak_assert(false);
     #endif
 
 							return E_INVALIDARG;
@@ -1490,7 +1489,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 		if (hr != E_FAIL) {
 			
 #ifdef DEBUG
-			weak_assert(0);
+			weak_assert(false);
 #endif
 
 			return E_INVALIDARG;
@@ -1509,7 +1508,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 	if (!t->m_equation) {
 			
 #ifdef DEBUG
-		weak_assert(0);
+		weak_assert(false);
 #endif
 
 		return E_INVALIDARG;
@@ -1528,7 +1527,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_SPREADPARMS_NZ)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1540,7 +1539,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_FMC_NOCALC)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1558,7 +1557,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_SFC_S1)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1573,7 +1572,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_TFC_O1)) {
 		
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1592,7 +1591,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_RSI_CONSTANT)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1607,7 +1606,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_ISF_O1)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1620,7 +1619,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_CFB_D2)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1632,7 +1631,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_ACCEL_OPEN)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1644,7 +1643,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_LB_O1)) {
 			
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1658,7 +1657,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 								(equation != FUELCOM_EQUATION_SELECTION_FLAMELENGTH_TREE)) {
 
 #ifdef DEBUG
-								weak_assert(0);
+								weak_assert(false);
 #endif
 
 								return E_INVALIDARG;
@@ -1667,7 +1666,7 @@ HRESULT FBPFuel::SetEquation(std::uint16_t equationKey, std::uint16_t equation) 
 		default:
 			
 #ifdef DEBUG
-							weak_assert(0);
+							weak_assert(false);
 #endif
 
 							return E_INVALIDARG;

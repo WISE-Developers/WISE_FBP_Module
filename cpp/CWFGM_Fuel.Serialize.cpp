@@ -227,13 +227,13 @@ CCWFGM_Fuel *CCWFGM_Fuel::deserializeFuel(const google::protobuf::Message& proto
 	if (!msg) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.CcwfgmFuel", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("CWFGM.FuelProto.CwfgmFuel: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 	if ((msg->version() != 1) && (msg->version() != 2)) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.CcwfgmFuel", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("CWFGM.FuelProto.CwfgmFuel: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -309,6 +309,6 @@ CCWFGM_Fuel *CCWFGM_Fuel::deserializeFuel(const google::protobuf::Message& proto
 			return retval;
 		}
 	}
-	weak_assert(0);
+	weak_assert(false);
 	return nullptr;
 }

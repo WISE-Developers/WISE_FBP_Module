@@ -40,7 +40,6 @@ public class Cwfgm_Fuel_Non extends Cwfgm_Fuel_Readonly {
 		m_fuel.m_AccAlphaCalculation = new AccAlphaOpen();
 		m_fuel.m_LBCalculation = new LB_C1();
 		m_fuel.m_CFBCalculation_Greenup = m_fuel.m_CFBCalculation = new CFB_C1();
-		m_fuel.m_DBHCalculation = new DBH_None();
 		m_fuel.m_FLCalculation = new FlameLength_Alexander82();
 	}
 

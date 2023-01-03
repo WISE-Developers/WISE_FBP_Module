@@ -43,8 +43,6 @@ public class Cwfgm_Fuel_C1 extends Cwfgm_Fuel_Readonly {
 		m_fuel.m_AccAlphaCalculation = new AccAlphaOpen();
 		m_fuel.m_LBCalculation = new LB_C1();
 		m_fuel.m_CFBCalculation_Greenup = m_fuel.m_CFBCalculation = new CFB_C1();
-		m_fuel.m_DBHCalculation = new DBH_1();
-		m_fuel.m_DBHCalculation.setAttributeValue((short)FUELCOM_ATTRIBUTE.HUANG_DBH_C1_DEFAULTS, 0.0);
 		m_fuel.m_FLCalculation = new FlameLength_Alexander82_Tree();
 	}
 
