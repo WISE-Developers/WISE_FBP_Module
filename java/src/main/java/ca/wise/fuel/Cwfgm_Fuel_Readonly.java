@@ -38,11 +38,6 @@ public class Cwfgm_Fuel_Readonly extends Cwfgm_Fuel {
 	}
 
 	@Override
-	public void setSpeciesCode(String name) {
-		throw new IllegalStateException("The object is in an unexpected state.");
-	}
-	
-	@Override
 	public void setC2(CwfgmFuel C2) {
 		throw new IllegalStateException("The object is in an unexpected state.");
 	}
