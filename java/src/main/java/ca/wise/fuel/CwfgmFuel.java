@@ -35,8 +35,6 @@ public abstract class CwfgmFuel implements Cloneable, ISerializeProto<CwfgmFuel>
 
 	String getName() { return m_name; }
 
-	public abstract String getSpeciesCode();
-	
 	public CwfgmFuel() { }
 
 	/**
