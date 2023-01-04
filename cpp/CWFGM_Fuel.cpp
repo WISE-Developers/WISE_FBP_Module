@@ -24,7 +24,6 @@
 #include "lb.h"
 #include "cfb.h"
 #include "AccAlpha.h"
-#include "dbh.h"
 #include "flame.h"
 #include "SpreadParms.h"
 #include "FBPFuel.h"

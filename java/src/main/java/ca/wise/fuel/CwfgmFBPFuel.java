@@ -63,6 +63,4 @@ public abstract class CwfgmFBPFuel extends CwfgmFuel {
 	public abstract void setCustomEquation_ISF(CwfgmISFAttribute newVal);
 	public abstract CwfgmLBAttribute getCustomEquation_LB();	
 	public abstract void setCustomEquation_LB(CwfgmLBAttribute newVal);
-	public abstract CwfgmDBHAttribute getCustomEquation_DBH();
-	public abstract void setCustomEquation_DBH(CwfgmDBHAttribute newVal);
 }

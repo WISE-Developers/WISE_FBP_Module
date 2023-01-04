@@ -297,14 +297,14 @@ AccAlphaClosed *AccAlphaClosed::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.AccAlphaClosed", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaClosed: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.CcwfgmFuel", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaClosed: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -317,7 +317,7 @@ AccAlphaClosed *AccAlphaClosed::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.AccAlphaClosed.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("AccAlphaClosed: Version is invalid");
 		}
 
@@ -343,7 +343,7 @@ AccAlphaClosed *AccAlphaClosed::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 		}
 	}
 	return this;
@@ -477,13 +477,13 @@ AccAlphaOpen *AccAlphaOpen::deserialize(const google::protobuf::Message& proto, 
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.AccAlphaOpen", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaOpen: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.AccAlphaOpen", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("AccAlphaOpen: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -496,7 +496,7 @@ AccAlphaOpen *AccAlphaOpen::deserialize(const google::protobuf::Message& proto, 
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.AccAlphaOpen.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("AccAlphaOpen: Version is invalid");
 		}
 		
@@ -516,7 +516,7 @@ AccAlphaOpen *AccAlphaOpen::deserialize(const google::protobuf::Message& proto, 
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 		}
 	}
 	return this;

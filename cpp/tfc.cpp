@@ -103,14 +103,14 @@ TFC_C1 *TFC_C1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcC1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_C1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcC1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_C1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -123,7 +123,7 @@ TFC_C1 *TFC_C1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.TfcC1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_C1: Version is invalid");
 		}
 
@@ -140,7 +140,7 @@ TFC_C1 *TFC_C1::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_C1: Invalid default value");
 		}
 	}
@@ -203,14 +203,14 @@ TFC_D2 *TFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcD2", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_D2: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcD2", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_D2: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -223,7 +223,7 @@ TFC_D2 *TFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.TfcD2.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_D2: Version is invalid");
 		}
 
@@ -240,7 +240,7 @@ TFC_D2 *TFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_D2: Invalid default value");
 		}
 	}
@@ -304,14 +304,14 @@ TFC_M1 *TFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcM1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_M1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcM1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_M1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -324,7 +324,7 @@ TFC_M1 *TFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.TfcM1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_M1: Version is invalid");
 		}
 
@@ -341,7 +341,7 @@ TFC_M1 *TFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_M1: Invalid default value");
 		}
 	}
@@ -404,14 +404,14 @@ TFC_O1 *TFC_O1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcO1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_O1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.TfcO1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("TFC_O1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -424,7 +424,7 @@ TFC_O1 *TFC_O1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.TfcO1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("TFC_O1: Version is invalid");
 		}
 

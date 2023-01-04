@@ -45,7 +45,7 @@ HRESULT VariantToBoolean_(const PolymorphicAttribute& varIn, bool* retval) {
 		*retval = std::get<std::uint64_t>(varIn) ? true : false;
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = false;
 		return E_INVALIDARG;
 	}
@@ -73,7 +73,7 @@ HRESULT VariantToInt16_(const PolymorphicAttribute& varIn, std::int16_t* retval)
 		*retval = gsl::narrow_cast<std::int16_t>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -101,7 +101,7 @@ HRESULT VariantToInt32_(const PolymorphicAttribute& varIn, std::int32_t* retval)
 		*retval = gsl::narrow_cast<std::int32_t>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -129,7 +129,7 @@ HRESULT VariantToInt64_(const PolymorphicAttribute& varIn, std::int64_t* retval)
 		*retval = gsl::narrow_cast<std::int64_t>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -147,7 +147,7 @@ HRESULT VariantToTimeSpan_(const PolymorphicAttribute& varIn, HSS_Time::WTimeSpa
 		if (SUCCEEDED(VariantToInt64_(varIn, &var)))
 			*retval = HSS_Time::WTimeSpan(var);
 		else {
-			weak_assert(0);
+			weak_assert(false);
 			*retval = HSS_Time::WTimeSpan(0);
 			return E_INVALIDARG;
 		}
@@ -184,7 +184,7 @@ HRESULT VariantToUInt16_(const PolymorphicAttribute& varIn, std::uint16_t* retva
 		*retval = gsl::narrow_cast<std::uint16_t>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -212,7 +212,7 @@ HRESULT VariantToUInt32_(const PolymorphicAttribute& varIn, std::uint32_t* retva
 		*retval = gsl::narrow_cast<std::uint32_t>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -240,7 +240,7 @@ HRESULT VariantToUInt64_(const PolymorphicAttribute& varIn, std::uint64_t* retva
 		*retval = gsl::narrow_cast<std::uint64_t>(std::get<std::uint32_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*retval = 0;
 		return E_INVALIDARG;
 	}
@@ -265,7 +265,7 @@ HRESULT VariantToDouble_(const PolymorphicAttribute& varIn, double* pdblRet) {
 		*pdblRet = gsl::narrow_cast<double>(std::get<std::uint64_t>(varIn));
 
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		*pdblRet = 0.0;
 		return E_INVALIDARG;
 	}

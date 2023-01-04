@@ -55,7 +55,7 @@ T GetPolymorphicAttributeData(const PolymorphicAttribute& attr, T&& def) {
 		return std::get<T>(attr);
 	}
 	catch (std::bad_variant_access&) {
-		weak_assert(0);
+		weak_assert(false);
 		return def;
 	}
 }

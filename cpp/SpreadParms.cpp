@@ -466,14 +466,14 @@ SpreadParms_C1 *SpreadParms_C1::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsC1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_C1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsC1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_C1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -486,7 +486,7 @@ SpreadParms_C1 *SpreadParms_C1::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsC1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_C1: Version is invalid");
 		}
 
@@ -522,7 +522,7 @@ SpreadParms_C1 *SpreadParms_C1::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_C1: Invalid default value");
 		}
 	}
@@ -583,14 +583,14 @@ SpreadParms_S1 *SpreadParms_S1::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsS1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_S1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsS1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_S1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -603,7 +603,7 @@ SpreadParms_S1 *SpreadParms_S1::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsS1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_S1: Version is invalid");
 		}
 
@@ -633,7 +633,7 @@ SpreadParms_S1 *SpreadParms_S1::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_S1: Invalid default value");
 		}
 	}
@@ -818,14 +818,14 @@ SpreadParms_O1 *SpreadParms_O1::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsO1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_O1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsO1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_O1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -838,7 +838,7 @@ SpreadParms_O1 *SpreadParms_O1::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsO1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_O1: Version is invalid");
 		}
 
@@ -870,7 +870,7 @@ SpreadParms_O1 *SpreadParms_O1::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_O1: Invalid default value");
 		}
 	}
@@ -1068,14 +1068,14 @@ SpreadParms_O1ab *SpreadParms_O1ab::deserialize(const google::protobuf::Message&
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsO1ab", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_O1ab: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsO1ab", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_O1ab: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1088,7 +1088,7 @@ SpreadParms_O1ab *SpreadParms_O1ab::deserialize(const google::protobuf::Message&
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsO1ab.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_O1ab: Version is invalid");
 		}
 
@@ -1126,7 +1126,7 @@ SpreadParms_O1ab *SpreadParms_O1ab::deserialize(const google::protobuf::Message&
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_O1ab: Invalid default value");
 		}
 	}
@@ -1321,7 +1321,7 @@ WISE::FuelProto::SpreadParmsAttribute* SpreadParms_Mixed::serialize(const Serial
 
 #ifdef _DEBUG
 		if (!msgDef)
-			weak_assert(0);
+			weak_assert(false);
 #endif
 	}
 
@@ -1363,14 +1363,14 @@ SpreadParms_Mixed *SpreadParms_Mixed::deserialize(const google::protobuf::Messag
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsMixed", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_Mixed: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsMixed", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_Mixed: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1383,7 +1383,7 @@ SpreadParms_Mixed *SpreadParms_Mixed::deserialize(const google::protobuf::Messag
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsMixed.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_Mixed: Version is invalid");
 		}
 
@@ -1428,7 +1428,7 @@ SpreadParms_Mixed *SpreadParms_Mixed::deserialize(const google::protobuf::Messag
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_Mixed: Invalid default value");
 		}
 
@@ -1528,14 +1528,14 @@ SpreadParms_Non *SpreadParms_Non::deserialize(const google::protobuf::Message& p
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsNon", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_Non: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsNon", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_Non: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1548,14 +1548,14 @@ SpreadParms_Non *SpreadParms_Non::deserialize(const google::protobuf::Message& p
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsNon.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_Non: Version is invalid");
 		}
 	}
 	else {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsNon", name, validation::error_level::SEVERE, "Deserialize.Object:Incomplete", "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("SpreadParms_Non: Incomplete initialization");
 	}
 
@@ -1899,14 +1899,14 @@ SpreadParms_C6 *SpreadParms_C6::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsC6", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_C6: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsC6", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_C6: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1919,7 +1919,7 @@ SpreadParms_C6 *SpreadParms_C6::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsC6.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_C6: Version is invalid");
 		}
 
@@ -1955,7 +1955,7 @@ SpreadParms_C6 *SpreadParms_C6::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_C6: Invalid default value");
 		}
 	}
@@ -2092,14 +2092,14 @@ SpreadParms_D1 *SpreadParms_D1::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsD1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_D1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsD1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_D1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -2112,7 +2112,7 @@ SpreadParms_D1 *SpreadParms_D1::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsD1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_D1: Version is invalid");
 		}
 
@@ -2148,7 +2148,7 @@ SpreadParms_D1 *SpreadParms_D1::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_D1: Invalid default value");
 		}
 	}
@@ -2335,14 +2335,14 @@ SpreadParms_NZ *SpreadParms_NZ::deserialize(const google::protobuf::Message& pro
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsNz", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_NZ: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsNz", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_NZ: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -2355,7 +2355,7 @@ SpreadParms_NZ *SpreadParms_NZ::deserialize(const google::protobuf::Message& pro
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsNz.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_NZ: Version is invalid");
 		}
 
@@ -2391,7 +2391,7 @@ SpreadParms_NZ *SpreadParms_NZ::deserialize(const google::protobuf::Message& pro
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_NZ: Invalid default value");
 		}
 	}
@@ -2666,7 +2666,7 @@ WISE::FuelProto::SpreadParmsAttribute* SpreadParms_MixedDead::serialize(const Se
 
 #ifdef _DEBUG
 		if (!msgDef)
-			weak_assert(0);
+			weak_assert(false);
 #endif
 
 	}
@@ -2708,14 +2708,14 @@ SpreadParms_MixedDead *SpreadParms_MixedDead::deserialize(const google::protobuf
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsMixedDead", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_MixedDead: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SpreadParmsMixedDead", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SpreadParms_MixedDead: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -2728,7 +2728,7 @@ SpreadParms_MixedDead *SpreadParms_MixedDead::deserialize(const google::protobuf
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SpreadParmsMixedDead.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_MixedDead: Version is invalid");
 		}
 
@@ -2773,7 +2773,7 @@ SpreadParms_MixedDead *SpreadParms_MixedDead::deserialize(const google::protobuf
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, "Deserialize.Enum:Invalid", std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SpreadParms_MixedDead: Invalid default value");
 		}
 
@@ -3161,8 +3161,8 @@ HRESULT SpreadParms_O1::SetAttributeValue(std::uint16_t attributeKey, double att
 		return S_OK;
 
 	case FUELCOM_ATTRIBUTE_CURINGDEGREE:
-		if (attribute < 0.0)					{ weak_assert(0);  break; }
-		if (attribute > 1.0)					{ weak_assert(0);  break; }
+		if (attribute < 0.0)					{ weak_assert(false);  break; }
+		if (attribute > 1.0)					{ weak_assert(false);  break; }
 		m_curingDegree = attribute;
 		return S_OK;
 	}

@@ -337,14 +337,14 @@ LB_C1 *LB_C1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbC1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LB_C1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbC1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LB_C1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -357,7 +357,7 @@ LB_C1 *LB_C1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.LbC1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("LB_C1: Version is invalid");
 		}
 
@@ -383,7 +383,7 @@ LB_C1 *LB_C1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("LB_C1: Invalid default value");
 		}
 	}
@@ -512,14 +512,14 @@ LB_O1 *LB_O1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbO1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LB_O1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.LbO1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("LB_O1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -532,7 +532,7 @@ LB_O1 *LB_O1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.LbO1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("LB_O1: Version is invalid");
 		}
 
@@ -554,7 +554,7 @@ LB_O1 *LB_O1::deserialize(const google::protobuf::Message& proto, std::shared_pt
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("LB_O1: Invalid default value");
 		}
 	}
