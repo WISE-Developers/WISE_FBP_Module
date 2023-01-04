@@ -105,7 +105,7 @@ bool FMC_Calc::Equals(const FuelAttribute *attribute) const {
 double FMC_Calc::FMC(double lat, double lon, double elev, std::uint16_t day, const CCWFGM_FuelOverrides* /*overrides*/) const {
 	if (elev < 0.0)
 		if (elev != -99.0) {
-			weak_assert(0);
+			weak_assert(false);
 			elev = 0.0;
 		}
 
@@ -204,7 +204,7 @@ FMC_Calc *FMC_Calc::deserialize(const google::protobuf::Message& proto, std::sha
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FmcCalc", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMC_Calc: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
@@ -214,7 +214,7 @@ FMC_Calc *FMC_Calc::deserialize(const google::protobuf::Message& proto, std::sha
 	if (msgRead->version() != 1) {
 		if (v)
 			v->add_child_validation("CWFGM.FuelProto.FmcCalc.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMC_Calc: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -224,7 +224,7 @@ FMC_Calc *FMC_Calc::deserialize(const google::protobuf::Message& proto, std::sha
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FmcCalc.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("FMC_Calc: Version is invalid");
 		}
 
@@ -297,14 +297,14 @@ FMC_NoCalc *FMC_NoCalc::deserialize(const google::protobuf::Message& proto, std:
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FmcNoCalc", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMC_NoCalc: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FmcNoCalc", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FMC_NoCalc: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -317,7 +317,7 @@ FMC_NoCalc *FMC_NoCalc::deserialize(const google::protobuf::Message& proto, std:
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FmcNoCalc.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("FMC_NoCalc: Version is invalid");
 		}
 

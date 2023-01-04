@@ -310,26 +310,6 @@ public abstract class FUELCOM_ATTRIBUTE {
 	public static final int FMC_DAY0					= 16801;
 	public static final int FMC_END					= 16899;
 
-	public static final int HUANG_DBH_START			= 16900;
-	public static final int HUANG_DBH_B1				= 16901;
-	public static final int HUANG_DBH_B2				= 16902;
-	public static final int HUANG_DBH_B3				= 16903;
-
-	public static final int HUANG_DBH_C1_DEFAULTS		= 17000;
-	public static final int HUANG_DBH_C2_DEFAULTS		= 17001;
-	public static final int HUANG_DBH_C3_DEFAULTS		= 17002;
-	public static final int HUANG_DBH_C4_DEFAULTS		= 17003;
-	public static final int HUANG_DBH_C5_DEFAULTS		= 17004;
-	public static final int HUANG_DBH_C6_DEFAULTS		= 17005;
-	public static final int HUANG_DBH_C7_DEFAULTS		= 17006;
-	public static final int HUANG_DBH_D1_DEFAULTS		= 17007;
-	public static final int HUANG_DBH_D2_DEFAULTS		= 17008;
-	public static final int HUANG_DBH_M1_DEFAULTS		= 17009;
-	public static final int HUANG_DBH_M2_DEFAULTS		= 17010;
-	public static final int HUANG_DBH_M3_DEFAULTS		= 17011;
-	public static final int HUANG_DBH_M4_DEFAULTS		= 17012;
-	public static final int HUANG_DBH_END				= 17099;
-
 	public static final int FLAMELENGTH_START				= 17100;
 	public static final int FLAMELENGTH_TREE_DEFAULTS		= 17100;
 	public static final int FLAMELENGTH_OTHER_DEFAULTS	= 17101;

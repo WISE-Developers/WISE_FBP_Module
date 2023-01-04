@@ -430,14 +430,14 @@ SFC_C1 *SFC_C1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -482,7 +482,7 @@ SFC_C1 *SFC_C1::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_C1: Invalid default value");
 		}
 	}
@@ -772,14 +772,14 @@ SFC_C2 *SFC_C2::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC2", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C2: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC2", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C2: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -792,7 +792,7 @@ SFC_C2 *SFC_C2::deserialize(const google::protobuf::Message& proto, std::shared_
 		if ((msg.version() != 1) && (msg.version() != 2)) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcC2.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_C2: Version is invalid");
 		}
 
@@ -822,7 +822,7 @@ SFC_C2 *SFC_C2::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_C2: Invalid default value");
 		}
 	}
@@ -1037,14 +1037,14 @@ SFC_C7 *SFC_C7::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC7", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C2: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcC7", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_C2: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1057,7 +1057,7 @@ SFC_C7 *SFC_C7::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcC7.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_C2: Version is invalid");
 		}
 		
@@ -1091,7 +1091,7 @@ SFC_C7 *SFC_C7::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_C2: Invalid default value");
 		}
 	}
@@ -1314,14 +1314,14 @@ SFC_D2 *SFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcD2", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_D2: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcD2", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_D2: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1334,7 +1334,7 @@ SFC_D2 *SFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 		if ((msg.version() != 1) && (msg.version() != 2)) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcD2.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_D2: Version is invalid");
 		}
 
@@ -1371,7 +1371,7 @@ SFC_D2 *SFC_D2::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_D2: Invalid default value");
 		}
 	}
@@ -1435,13 +1435,13 @@ double SFC_M1::SFC(SpreadParmsAttribute *sa, std::int16_t flag, const CCWFGM_Fue
 	if (c2)
 		c2->SFC(FFMC, BUI, flag, overrides, &sfc_c2);
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		sfc_c2 = 0.0;
 	}
 	if (d1)
 		d1->SFC(FFMC, BUI, flag, overrides, &sfc_d1);
 	else {
-		weak_assert(0);
+		weak_assert(false);
 		sfc_d1 = 0.0;
 	}
 
@@ -1473,14 +1473,14 @@ SFC_M1 *SFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcM1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_M1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcM1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_M1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1493,7 +1493,7 @@ SFC_M1 *SFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcM1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_M1: Version is invalid");
 		}
 
@@ -1503,7 +1503,7 @@ SFC_M1 *SFC_M1::deserialize(const google::protobuf::Message& proto, std::shared_
 	else {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcM1", name, validation::error_level::SEVERE, validation::id::object_incomplete, "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("SFC_M1: Incomplete initialization");
 	}
 
@@ -1828,14 +1828,14 @@ SFC_O1 *SFC_O1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcO1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_O1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcO1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_O1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -1848,7 +1848,7 @@ SFC_O1 *SFC_O1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if ((msg.version() != 1) && (msg.version() != 2)) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcO1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_O1: Version is invalid");
 		}
 
@@ -1872,7 +1872,7 @@ SFC_O1 *SFC_O1::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_O1: Invalid default value");
 		}
 	}
@@ -2263,14 +2263,14 @@ SFC_S1 *SFC_S1::deserialize(const google::protobuf::Message& proto, std::shared_
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcS1", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_S1: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.SfcS1", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("SFC_S1: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
@@ -2283,7 +2283,7 @@ SFC_S1 *SFC_S1::deserialize(const google::protobuf::Message& proto, std::shared_
 		if (msg.version() != 1) {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.SfcS1.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_S1: Version is invalid");
 		}
 
@@ -2319,7 +2319,7 @@ SFC_S1 *SFC_S1::deserialize(const google::protobuf::Message& proto, std::shared_
 		else {
 			if (v)
 				v->add_child_validation("CWFGM.FuelProto.FuelName", "default", validation::error_level::WARNING, validation::id::enum_invalid, std::to_string(val));
-			weak_assert(0);
+			weak_assert(false);
 			throw std::invalid_argument("SFC_S1: Invalid default value");
 		}
 	}

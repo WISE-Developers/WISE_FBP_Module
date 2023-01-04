@@ -66,7 +66,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 	public AccAlphaAttribute m_AccAlphaCalculation;
 	public LBAttribute  m_LBCalculation;
 	public CFBAttribute m_CFBCalculation, m_CFBCalculation_Greenup;
-	public DBHAttribute	m_DBHCalculation;
 	public FlameLengthAttribute m_FLCalculation;
 
 	public CwfgmAccelAttribute m_AccelCustom;
@@ -77,7 +76,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 	public CwfgmRSIAttribute m_RSICustom;
 	public CwfgmISFAttribute m_ISFCustom;
 	public CwfgmLBAttribute m_LBCustom;
-	public CwfgmDBHAttribute m_DBHCustom;
 
 	protected boolean m_fuelTypeModified;
 
@@ -101,7 +99,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 		m_AccAlphaCalculation = null;
 		m_LBCalculation = null;
 		m_CFBCalculation_Greenup = m_CFBCalculation = null;
-		m_DBHCalculation = null;
 		m_FLCalculation = null;
 
 		m_AccelCustom = null;
@@ -112,7 +109,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 		m_RSICustom = null;
 		m_ISFCustom = null;
 		m_LBCustom = null;
-		m_DBHCustom = null;
 	}
 
 	public FBP_Fuel(final FBP_Fuel other) {
@@ -143,7 +139,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			m_LBCalculation = (other.m_LBCalculation != null) ? (LBAttribute)other.m_LBCalculation.clone() : null;
 			m_CFBCalculation_Greenup = (other.m_CFBCalculation_Greenup != null) ? (CFBAttribute)other.m_CFBCalculation_Greenup.clone() : null;
 			m_CFBCalculation = (other.m_CFBCalculation != null) ? (CFBAttribute)other.m_CFBCalculation.clone() : null;
-			m_DBHCalculation = (other.m_DBHCalculation != null) ? (DBHAttribute)other.m_DBHCalculation.clone() : null;
 			m_FLCalculation = (other.m_FLCalculation != null) ? (FlameLengthAttribute)other.m_FLCalculation.clone() : null;
 		}
 		catch (CloneNotSupportedException e) {
@@ -157,7 +152,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 		m_RSICustom = other.m_RSICustom;
 		m_ISFCustom = other.m_ISFCustom;
 		m_LBCustom = other.m_LBCustom;
-		m_DBHCustom = other.m_DBHCustom;
 	}
 
 	private static <T> boolean compare_c(T a, T b) {
@@ -201,7 +195,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			if (!compare_c(m_LBCalculation, fuel.m_LBCalculation))						return false;
 			if (!compare_c(m_CFBCalculation_Greenup, fuel.m_CFBCalculation_Greenup))	return false;
 			if (!compare_c(m_CFBCalculation, fuel.m_CFBCalculation))					return false;
-			if (!compare_c(m_DBHCalculation, fuel.m_DBHCalculation))					return false;
 			if (!compare_c(m_FLCalculation, fuel.m_FLCalculation))						return false;
 
 			return true;
@@ -488,13 +481,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			return m_AccelCustom.Acceleration(cfb);
 		else
 			return m_AccAlphaCalculation.accAlpha(cfb);
-	}
-
-	public double dbh(double height) {
-		if (m_DBHCustom != null)
-			return m_DBHCustom.DBH(height);
-		else
-			return m_DBHCalculation.dbh(height);
 	}
 
 	public double flameLength(double height, double CFB, double fi) {
@@ -831,10 +817,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			attribute.value = m_FMCCalculation.getAttributeValue((short)key);
 		}
 
-		else if ((key >= FUELCOM_ATTRIBUTE.HUANG_DBH_START) && (key < FUELCOM_ATTRIBUTE.HUANG_DBH_END)) {
-			attribute.value = m_DBHCalculation.getAttributeValue((short)key);
-		}
-
 		else if ((key >= FUELCOM_ATTRIBUTE.FLAMELENGTH_START) && (key < FUELCOM_ATTRIBUTE.FLAMELENGTH_END)) {
 			attribute.value = m_FLCalculation.getAttributeValue((short)key);
 		}
@@ -921,10 +903,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			m_FMCCalculation.setAttributeValue((short)key, attribute);
 		}
 
-		else if ((key >= FUELCOM_ATTRIBUTE.HUANG_DBH_START) && (key < FUELCOM_ATTRIBUTE.HUANG_DBH_END)) {
-			m_DBHCalculation.setAttributeValue((short)key, attribute);
-		}
-
 		else if ((key >= FUELCOM_ATTRIBUTE.FLAMELENGTH_START) && (key < FUELCOM_ATTRIBUTE.FLAMELENGTH_END)) {
 			m_FLCalculation.setAttributeValue((short)key, attribute);
 		}
@@ -947,7 +925,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 			case FUELCOM_EQUATION.CFB_GREENUP:	if (m_CFBCalculation_Greenup == null) return 0; return m_CFBCalculation_Greenup.getExternalDefinition();
 			case FUELCOM_EQUATION.ACCEL:		if (m_AccAlphaCalculation == null) return 0; return m_AccAlphaCalculation.getExternalDefinition();
 			case FUELCOM_EQUATION.LB:			if (m_LBCalculation == null) return 0; return m_LBCalculation.getExternalDefinition();
-			case FUELCOM_EQUATION.DBH:			if (m_DBHCalculation == null) return 0; return m_DBHCalculation.getExternalDefinition();
 			case FUELCOM_EQUATION.FLAMELENGTH:	if (m_FLCalculation == null) return 0; return m_FLCalculation.getExternalDefinition();
 			case FUELCOM_EQUATION.SPREADPARMS:	if (m_spread == null) return 0; return m_spread.getExternalDefinition();
 			default:							throw new IllegalArgumentException("One of the inputs is out of range.");
@@ -1048,16 +1025,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 									}
 									break;
 
-				case FUELCOM_EQUATION.DBH:
-									if ((equation != FUELCOM_EQUATION.SELECTION_DBH_1) &&
-										(equation != FUELCOM_EQUATION.SELECTION_DBH_2) &&
-										(equation != FUELCOM_EQUATION.SELECTION_DBH_3) &&
-										(equation != FUELCOM_EQUATION.SELECTION_DBH_4) &&
-										(equation != FUELCOM_EQUATION.SELECTION_DBH_NONE)) {
-										throw new IllegalArgumentException("One of the inputs is out of range.");
-									}
-									break;
-
 				case FUELCOM_EQUATION.FLAMELENGTH:
 									if ((equation != FUELCOM_EQUATION.SELECTION_FLAMELENGTH_TREE) &&
 										(equation != FUELCOM_EQUATION.SELECTION_FLAMELENGTH_OTHER) &&
@@ -1112,12 +1079,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 				case FUELCOM_EQUATION.SELECTION_LB_C1:	fa = new LB_C1(); break;
 				case FUELCOM_EQUATION.SELECTION_LB_O1:	fa = new LB_O1(); break;
 
-				case FUELCOM_EQUATION.SELECTION_DBH_1:	fa = new DBH_1(); break;
-				case FUELCOM_EQUATION.SELECTION_DBH_2:	fa = new DBH_2(); break;
-				case FUELCOM_EQUATION.SELECTION_DBH_3:	fa = new DBH_3(); break;
-				case FUELCOM_EQUATION.SELECTION_DBH_4:	fa = new DBH_4(); break;
-				case FUELCOM_EQUATION.SELECTION_DBH_NONE:	fa = new DBH_None(); break;
-
 				case FUELCOM_EQUATION.SELECTION_FLAMELENGTH_TREE:	fa = new FlameLength_Tree(); break;
 				case FUELCOM_EQUATION.SELECTION_FLAMELENGTH_OTHER:	fa = new FlameLength_Other(); break;
 				case FUELCOM_EQUATION.SELECTION_FLAMELENGTH_ALEXANDER82:	fa = new FlameLength_Alexander82(); break;
@@ -1152,7 +1113,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 				case FUELCOM_EQUATION.CFB_GREENUP:	m_CFBCalculation_Greenup = (CFBAttribute)fa; break;
 				case FUELCOM_EQUATION.ACCEL:		m_AccAlphaCalculation = (AccAlphaAttribute)fa; break;
 				case FUELCOM_EQUATION.LB:			m_LBCalculation = (LBAttribute)fa; break;
-				case FUELCOM_EQUATION.DBH:			m_DBHCalculation = (DBHAttribute)fa; break;
 				case FUELCOM_EQUATION.FLAMELENGTH:	m_FLCalculation = (FlameLengthAttribute)fa; break;
 				default:							throw new IllegalArgumentException("One of the inputs is out of range.");
 			}
@@ -1234,9 +1194,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 		if (m_CFBCalculation_Greenup != null)
 			msg.setCfbCalculationGreenup(m_CFBCalculation_Greenup.serialize(options));
 
-		if (m_DBHCalculation != null)
-			msg.setDbhCalculation(m_DBHCalculation.serialize(options));
-
 		if (m_FLCalculation != null)
 			msg.setFlCalculation(m_FLCalculation.serialize(options));
 
@@ -1310,10 +1267,6 @@ public final class FBP_Fuel implements ISerializeProto<FBP_Fuel> {
 		}
 		if (msgRead.hasCfbCalculationGreenup()) {
 			m_CFBCalculation_Greenup.deserialize(msgRead.getCfbCalculationGreenup());
-		}
-
-		if (msgRead.hasDbhCalculation()) {
-			m_DBHCalculation.deserialize(msgRead.getDbhCalculation());
 		}
 
 		if (msgRead.hasFlCalculation()) {

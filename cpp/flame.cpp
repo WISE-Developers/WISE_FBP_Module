@@ -131,21 +131,21 @@ FlameLength_Alexander82 *FlameLength_Alexander82::deserialize(const google::prot
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Alexander82: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Alexander82: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
 	if (!msgRead->has_parms()) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82", name, validation::error_level::SEVERE, validation::id::object_incomplete, "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Alexander82: Incomplete initialization");
 	}
 
@@ -156,7 +156,7 @@ FlameLength_Alexander82 *FlameLength_Alexander82::deserialize(const google::prot
 	if (msg.version() != 1) {
 		if (v)
 			v->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Alexander82: Version is invalid");
 	}
 
@@ -276,21 +276,21 @@ FlameLength_Alexander82_Tree *FlameLength_Alexander82_Tree::deserialize(const go
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82Tree", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Alexander82_Tree: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82Tree", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Alexander82_Tree: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
 	if (!msgRead->has_parms()) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82Tree", name, validation::error_level::SEVERE, validation::id::object_incomplete, "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Alexander82_Tree: Incomplete initialization");
 	}
 
@@ -301,7 +301,7 @@ FlameLength_Alexander82_Tree *FlameLength_Alexander82_Tree::deserialize(const go
 	if (msg.version() != 1) {
 		if (v)
 			v->add_child_validation("CWFGM.FuelProto.FlameLengthAlexander82Tree.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Alexander82_Tree: Version is invalid");
 	}
 
@@ -431,21 +431,21 @@ FlameLength_Tree *FlameLength_Tree::deserialize(const google::protobuf::Message&
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthTree", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Tree: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthTree", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Tree: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
 	if (!msgRead->has_parms()) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthTree", name, validation::error_level::SEVERE, validation::id::object_incomplete, "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Tree: Incomplete initialization");
 	}
 
@@ -456,7 +456,7 @@ FlameLength_Tree *FlameLength_Tree::deserialize(const google::protobuf::Message&
 	if (msg.version() != 1) {
 		if (v)
 			v->add_child_validation("CWFGM.FuelProto.FlameLengthTree.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Tree: Version is invalid");
 	}
 
@@ -564,21 +564,21 @@ FlameLength_Other *FlameLength_Other::deserialize(const google::protobuf::Messag
 	if (!msgRead) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthOther", name, validation::error_level::SEVERE, validation::id::object_invalid, proto.GetDescriptor()->name());
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Other: Protobuf object invalid", ERROR_PROTOBUF_OBJECT_INVALID);
 	}
 
 	if (msgRead->version() != 1) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthOther", name, validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msgRead->version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw ISerializeProto::DeserializeError("FlameLength_Other: Version is invalid", ERROR_PROTOBUF_OBJECT_VERSION_INVALID);
 	}
 
 	if (!msgRead->has_parms()) {
 		if (valid)
 			valid->add_child_validation("CWFGM.FuelProto.FlameLengthOther", name, validation::error_level::SEVERE, validation::id::object_incomplete, "parms");
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Other: Incomplete initialization");
 	}
 
@@ -589,7 +589,7 @@ FlameLength_Other *FlameLength_Other::deserialize(const google::protobuf::Messag
 	if (msg.version() != 1) {
 		if (v)
 			v->add_child_validation("CWFGM.FuelProto.FlameLengthOther.Parms", "parms", validation::error_level::SEVERE, validation::id::version_mismatch, std::to_string(msg.version()));
-		weak_assert(0);
+		weak_assert(false);
 		throw std::invalid_argument("FlameLength_Other: Version is invalid");
 	}
 
