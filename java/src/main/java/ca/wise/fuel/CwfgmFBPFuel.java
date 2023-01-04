@@ -39,7 +39,6 @@ public abstract class CwfgmFBPFuel extends CwfgmFuel {
 	}
 
 	public abstract void setName(String name);
-	public abstract void setSpeciesCode(String speciesCode);
 	public abstract CwfgmFuel getC2();
 	public abstract void setC2(CwfgmFuel C2);
 	public abstract CwfgmFuel getD1();	
