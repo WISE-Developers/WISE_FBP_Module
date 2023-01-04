@@ -73,7 +73,6 @@ add_library(fuel SHARED
     cpp/CWFGM_Fuel_Shared.cpp
     cpp/CWFGM_Fuel.cpp
     cpp/CWFGM_Fuel.Serialize.cpp
-    cpp/dbh.cpp
     cpp/FBPFuel.cpp
     cpp/flame.cpp
     cpp/fmc.cpp
@@ -115,7 +114,6 @@ set_target_properties(fuel PROPERTIES
     PUBLIC_HEADER include/cfb.h
     PUBLIC_HEADER include/cfb.pb.h
     PUBLIC_HEADER include/CWFGM_Fuel_Shared.h
-    PUBLIC_HEADER include/dbh.h
     PUBLIC_HEADER include/dbh.pb.h
     PUBLIC_HEADER include/FBPFuel.h
     PUBLIC_HEADER include/flame.h
