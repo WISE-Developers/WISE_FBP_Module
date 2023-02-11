@@ -18,9 +18,12 @@
 
 #pragma once
 
+#ifdef _MSC_VER
+#include <afx.h>
+#endif
+
 #include "FuelConfig.h"
 #include "hssconfig/config.h"
-#include "boost_ll_config.h"
 
 #include <string>
 #include <boost/intrusive_ptr.hpp>
