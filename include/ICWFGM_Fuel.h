@@ -19,8 +19,6 @@
 #pragma once
 
 #include "ICWFGM_CommonBase.h"
-#include "WTime.h"
-#include "types.h"
 #include "guid.h"
 #include "hssconfig/config.h"
 #include <map>
