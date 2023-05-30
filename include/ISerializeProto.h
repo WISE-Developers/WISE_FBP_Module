@@ -75,19 +75,13 @@ public:
 class ISerializeProto {
 public:
 
-	class DeserializeError : public std::logic_error {
+	class FUELCOM_API DeserializeError : public std::logic_error {
 	protected:
 		std::string msg_;
 
 	public:
-		explicit DeserializeError(const std::string& message) :
-			logic_error(message)
-		{}
-		explicit DeserializeError(const std::string& message, std::uint32_t hr_) :
-			logic_error(message)
-		{
-			hr = hr_;
-		}
+		explicit DeserializeError(const std::string& message);
+		explicit DeserializeError(const std::string& message, std::uint32_t hr_);
 
 		std::uint32_t hr = 0;
 	};
