@@ -17,6 +17,7 @@
  */
 
 #include "ICWFGM_CommonBase.h"
+#include "ISerializeProto.h"
 
 #include "WTime.h"
 
@@ -306,4 +307,17 @@ HRESULT ICWFGM_CommonBase::get_UserData(PolymorphicUserData *pVal) const {
 HRESULT ICWFGM_CommonBase::put_UserData(const PolymorphicUserData &newVal) {
 	m_userData = newVal;
 	return S_OK;
+}
+
+
+ISerializeProto::DeserializeError::DeserializeError(const std::string& message) :
+	logic_error(message)
+{
+}
+
+
+ISerializeProto::DeserializeError::DeserializeError(const std::string& message, std::uint32_t hr_) :
+	logic_error(message)
+{
+	hr = hr_;
 }
